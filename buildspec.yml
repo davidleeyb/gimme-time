@@ -16,8 +16,9 @@ phases:
     - npm run test
     - mkdir -p target/stg
     - mkdir target/prod
-    - serverless package --package target/stg --stage stg -v -r eu-central-1
-    - serverless package --package target/prod --stage prod -v -r eu-central-1
+    - serverless config credentials --provider aws --key AKIASSZ4LG67NCIUAX6W --secret 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 --profile awscoder --overwrite
+    - serverless package --package target/stg --stage stg -v -r us-west-2 --profile awscoder
+    - serverless package --package target/prod --stage prod -v -r us-west-2 --profile awscoder
 
 artifacts:
   files:
