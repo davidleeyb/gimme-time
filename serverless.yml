@@ -2,6 +2,7 @@ service: gimme-time
 
 provider:
   name: aws
+  profile: awscoder
   runtime: nodejs8.10
   environment:
     STAGE: ${opt:stage}
